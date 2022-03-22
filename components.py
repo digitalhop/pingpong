@@ -128,6 +128,7 @@ class Ball(Turtle):
         self.theScreen = screen
         self.theBall = Turtle()
         self._createBall()
+        self.ballSpeed = 5
 
     def _createBall(self):
         self.theBall.penup()
@@ -169,7 +170,7 @@ class Ball(Turtle):
             self.theBall.setheading(random.randint(120, 160))
         elif self.theBall.distance(pong.rightPongBottom) < 20:
             self.theBall.setheading(random.randint(200, 240))
-        self.theBall.forward(5)
+        self.theBall.forward(self.ballSpeed)
 
     def _normaliseAngle(self, theAngle):
         # if angle more than 360, then subtract 360
